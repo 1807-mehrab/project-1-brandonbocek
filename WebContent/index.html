@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Brandon's Messenger</title>
+<link rel="stylesheet" type="text/css" href="css/myStyle.css">
+<script type="text/javascript" src="js/jquery-1.6.2.js"></script>
+<script type="text/javascript" src="js/user.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/signin.js"></script>
+	
+<script>
+	$(document).ready(function() {
+		
+		document.getElementById("loggedInUsername").style.display = "none";
+		
+		document.getElementById("logoutDisplay").style.display = "none";
+		document.getElementById("result1").style.display = "none";
+		document.getElementById("adminSeesAllTopicsView").style.display = "none";
+		document.getElementById("adminSeesAllFlaggedTopicsToChangeThemView").style.display = "none";
+		document.getElementById("adminSeesAllFlaggedRepliesToChangeThemView").style.display = "none";
+		document.getElementById("adminEditTopicView").style.display = "none";
+		document.getElementById("adminDeleteTopicView").style.display = "none";
+		document.getElementById("adminEditReplyView").style.display = "none";
+		document.getElementById("adminDeleteReplyView").style.display = "none";
+		document.getElementById("adminSeesAllUsersView").style.display = "none";
+		
+		document.getElementById("viewAllTopicsBtnDisplay").style.display = "none";
+		document.getElementById("postNewTopicBtnDisplay").style.display = "none";
+		document.getElementById("viewYourRepliesBtnDisplay").style.display = "none";
+		document.getElementById("viewYourProfileBtnDisplay").style.display = "none";
+		document.getElementById("updateYourProfileBtnDisplay").style.display = "none";
+		document.getElementById("userSelectsOneTopic").style.display = "none";
+		document.getElementById("userFlagsOneTopicView").style.display = "none";
+		document.getElementById("userEntersReplyView").style.display = "none";
+		document.getElementById("userFlagsReplyView").style.display = "none";
+		document.getElementById("userUpdatesTheirProfileView").style.display = "none";
+	
+	});
+</script>
+
+
+
+</head>
+<body>
+<div id="SiteHeadTitle">
+<h1>Brandon's Message Site</h1><br>
+</div>
+
+<div id="loggedInUsername"></div>
+
+</body>
+<div id="topForms">
+<form id="enterLoginCreds">
+	Name <input type="text" name="fullname" id="fullname"> <br>
+	Password <input type="password" name="mypassword" id="mypassword"> <br>
+	<input type="button" value="Login" id="loginBtn"> <br>
+</form>
+
+<form id="logoutDisplay"> <input type='button' value='logout' id='logoutBtn'><br><br></form>
+
+<form id="viewAllTopicsBtnDisplay"><input type='button' value='View All Topics' id='viewAllTopicsBtn'><br><br></form>
+
+<form id="postNewTopicBtnDisplay">
+
+	<input type="text" name="newTopicPostText" id="newTopicPostText">
+	<input type="file" name="newTopicPic">
+	<input type='button' value='Post New Topic' id='postNewTopicBtn'><br><br>
+</form>
+<form id="viewYourRepliesBtnDisplay"><input type='button' value='View Your Replies' id='viewYourRepliesBtn'><br><br></form>
+
+<form id="viewYourProfileBtnDisplay"><input type='button' value='View Your Profile' id='viewYourProfileBtn'><br><br></form>
+
+<form id="updateYourProfileBtnDisplay">
+	<input type='button' value='Update Your Profile' id='updateYourProfileBtn'><br>
+</form>
+
+<form id="userUpdatesTheirProfileView">
+	<br><b>Update Your Profile Information</b><br>
+	<br><label for="userNewAge">Age: </label>
+	<input type="text" name="userNewAge" id="userNewAge"><br>
+	<br><label for="userNewLocation">City: </label>
+	<input type="text" name="userNewLocation" id="userNewLocation"><br>
+	<br><label for="userNewOccupation">Job: </label>
+	<input type="text" name="userNewOccupation" id="userNewOccupation"><br>
+	<br><input type="button" value="Submit Profile Changes" id="submitProfileUpdatesBtn">
+
+</form>
+
+<form id="adminSeesAllTopicsView">
+	<br>
+	<input type="button" value="View Every Topic" id="adminGoToAllTopicsBtn">
+</form>
+
+<form id="adminSeesAllFlaggedTopicsToChangeThemView">
+	<br>
+	<input type="button" value="View Flagged Topics" id="adminGoToAllTopicsForChangeBtn">
+</form>
+
+<form id="adminSeesAllFlaggedRepliesToChangeThemView">
+	<br>
+	<input type="button" value="View Flagged Replies" id="adminGoToAllRepliesForChangeBtn">
+</form>
+
+<form id="adminSeesAllUsersView">
+	<br>
+	<input type="button" value="View All Users" id="adminSeesAllUsersBtn">
+</form>
+
+</div>
+
+<br>
+
+<div id="result1">
+</div>
+
+<br>
+
+<div id="bottomForms">
+<form id="userSelectsOneTopic">
+	<label for="topicId">ID: </label>
+	<input type="text" name="topicId" id="topicId">
+	<input type="button" value="See Topic Replies" id="getTopicDetailsBtn">
+</form>
+
+<br>
+
+<form id="userFlagsOneTopicView">
+	<label for="topicIdToFlag">ID: </label>
+	<input type="text" name="topicIdToFlag" id="topicIdToFlag">
+	<input type="button" value="Flag Topic" id="flagTopicBtn">
+</form>
+
+<form id="userEntersReplyView">
+	<input type="text" name="userReplyEntry" id="userReplyEntry">
+	<input type="button" value="Submit Reply" id="submitReplyBtn">
+</form>
+
+<br>
+
+<form id="userFlagsReplyView">
+	<label for="userFlagReplyEntry">ID: </label>
+	<input type="text" name="userFlagReplyEntry" id="userFlagReplyEntry">
+	<input type="button" value="Flag Reply" id="submitFlagReplyBtn">
+</form>
+
+<div id="result2">
+</div>
+
+<br>
+<form id="adminDeleteTopicView">
+	
+	<label for="idNumOfTopicToDelete">Topic ID to Delete:</label>
+	<input type="text" name="idNumOfTopicToDelete" id="idNumOfTopicToDelete"><br>
+	<input type='button' value='Delete Topic' id='adminDeleteTopicBtn'><br><br>
+</form>
+
+<br>
+<form id="adminEditTopicView">
+	
+	<label for="idNumOfTopicToEdit">Topic ID to Edit:</label>
+	<input type="text" name="idNumOfTopicToEdit" id="idNumOfTopicToEdit"><br>
+	<label for="newContentOfEditedTopic">New Topic Content:</label>
+	<input type="text" name="newContentOfEditedTopic" id="newContentOfEditedTopic"><br>
+	<input type='button' value='Edit Topic' id='adminEditTopicBtn'><br><br>
+</form>
+
+<br>
+<form id="adminDeleteReplyView">
+	
+	<label for="idNumOfReplyToDelete">Reply ID to Delete:</label>
+	<input type="text" name="idNumOfReplyToDelete" id="idNumOfReplyToDelete"><br>
+	<input type='button' value='Delete Reply' id='adminDeleteReplyBtn'><br><br>
+</form>
+
+<br>
+<form id="adminEditReplyView">
+	
+	<label for="idNumOfReplyToEdit">Reply ID to Edit:</label>
+	<input type="text" name="idNumOfReplyToEdit" id="idNumOfReplyToEdit"><br>
+	<label for="newContentOfEditedReply">New Reply Content:</label>
+	<input type="text" name="newContentOfEditedReply" id="newContentOfEditedReply"><br>
+	<input type='button' value='Edit Topic' id='adminEditReplyBtn'><br><br>
+</form>
+</div>
+<!--
+<form action="TestServlet" method="POST">
+	<input type="text" name="testingText">
+	<input type="submit" value="Send Data">
+</form>
+-->
+
+</html>
